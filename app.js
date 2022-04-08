@@ -38,7 +38,10 @@ app.post('/', async (req, res) => {
  
     // res.send('Data received')
 
-    if(response.errors[0].error_code==="ERROR_CONTACT_EXISTS")
+    console.log(response);
+
+
+    if(response.errors.length>0)
     {
         res.redirect("/");
     }
