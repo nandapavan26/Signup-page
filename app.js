@@ -48,11 +48,11 @@ app.post('/', async (req, res) => {
     else{
         if(response.new_members[0].status==="subscribed")
         {
-            res.send("sucess!");
+            res.sendFile(__dirname+"/sucess.html")
         }
         else
         {
-            res.send("failure");
+            res.sendFile(__dirname+"/failure.html")
         }
     }
 })
