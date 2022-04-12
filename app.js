@@ -43,16 +43,12 @@ app.post('/', async (req, res) => {
 
     if(response.errors.length>0)
     {
-        res.redirect("/");
+        res.sendFile(__dirname+"/failure.html");
     }
     else{
         if(response.new_members[0].status==="subscribed")
         {
             res.sendFile(__dirname+"/success.html")
-        }
-        else
-        {
-            res.sendFile(__dirname+"/failure.html")
         }
     }
 })
